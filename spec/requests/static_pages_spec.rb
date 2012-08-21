@@ -19,24 +19,22 @@ describe "Static pages" do
   end
 
   describe "Help page" do
-   before { visit root_path }
     let(:heading)    { 'Help' }
-       it { should_not have_selector 'title', text: '| Help' }
+    it { should_not have_selector 'title', text: '| Help' }
   end
 
   describe "About page" do
-    before { visit root_path }
-    let(:heading)    { 'About' }
-       it { should_not have_selector 'title', text: '| About' }
+let(:heading)    { 'About' }
+    it { should_not have_selector 'title', text: '| About' }
   end
 
   describe "Contact page" do
-    before { visit root_path }
-    let(:heading)    { 'Contact' }
-       it { should_not have_selector 'title', text: '| Contact' }
+  let(:heading)    { 'Contact' }
+    it { should_not have_selector 'title', text: '| Contact' }
   end
 
-  it "should have the right links on the layout" do
+
+    it "should have the right links on the layout" do
     visit root_path
     click_link "About"
     page.should have_selector 'title', text: full_title('About Us')
@@ -45,9 +43,8 @@ describe "Static pages" do
     click_link "Contact"
     page.should have_selector 'title', text: full_title('Contact')
     click_link "Home"
-     click_link "Sign up now!"
-    page.should have_selector 'title', text: full_title('Sign Up')
-   # click_link "sample app"
-   # page.should have_selector 'title', text: full_title('Sample App')
-end
+    click_link "Sign up now!"
+    page.should have_selector 'title', text: full_title('Sign up')
+   
+  end
 end
