@@ -43,3 +43,4 @@ module SessionsHelper
     session[:return_to] = request.url
   end
 end
+
